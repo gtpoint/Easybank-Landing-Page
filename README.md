@@ -1,5 +1,5 @@
-#Demo
-
+#Demo :
+==> https://gtpoint.github.io/Easybank-Landing-Page/
 
 # Front-end Style Guide
 
