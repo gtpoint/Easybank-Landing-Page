@@ -1,0 +1,473 @@
+
+/* start variables */
+:root {
+    --mainBackgroundColor: linear-gradient(to right ,hsl(136, 65%, 51%) , hsl(192, 70%, 51%));
+    --mainBackgroundColor2 :linear-gradient(to bottom right ,hsl(136, 65%, 51%) , hsl(192, 70%, 51%) );
+    --mainColor:#777;
+    --mainPadding :60px;
+} 
+
+/* end variables */
+/* start global rules */
+/* start componnent */
+
+.section .main-heading {
+    margin-bottom: 100px;
+    width: 600px;
+    max-width:100% ;
+}
+
+@media (max-width:767px) {
+    .section .main-heading {
+        text-align: center;
+    }
+}
+.section .main-heading h2 {
+    font-weight: 500;
+    font-size: 40px;
+    color: rgb(13, 9, 58);
+    margin-bottom: 20px;
+}
+
+.section .main-heading p {
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--mainColor);
+}
+/* End componnent */
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* media */
+/* small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* mediam */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* button shuffle */
+button[type="submit"] {
+    background-image: var(--mainBackgroundColor);
+    padding: 13px 30px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    opacity: .6;
+}
+
+/* end global rules */
+
+/* start header */
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 70px;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    header .container nav {
+        justify-content: flex-end;
+    }
+}
+
+header .container nav .Toggle-menu {
+    font-size: 23px;
+    height: 68px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width:768px) {
+    header .container nav .Toggle-menu {
+        display: none;
+    }
+}
+
+header .container nav ul {
+    display: flex;
+}
+
+@media (max-width:767px) {
+    header .container nav ul {
+        display: none;
+        left: -100%;
+        transition: .3s;
+    }
+
+    header .container nav .Toggle-menu:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:100% ;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 3;
+    }
+
+    header .container nav ul li a {
+        padding: 20px !important;
+        color: #777 !important;
+    }
+}
+
+header .container nav ul li a {
+    text-decoration: none;
+    color: var(--mainColor);
+    position: relative;
+    padding: 30px 15px;
+    font-size:18px ;
+    display: block;
+    transition-duration: .3s;
+    z-index: 2;
+}
+
+header .container nav ul li a:hover {
+    color:hsl(136, 65%, 51%) ;
+}
+
+header .container nav ul li a::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 5px);
+    width: 0;
+    left: 0;
+    height: 4px;
+    background-image: var(--mainBackgroundColor);
+    transition-duration: .3s;
+}
+
+header .container nav ul li a:hover::after {
+    width: 100%;
+}
+
+@media (max-width:991px) {
+    header .container button[type="submit"] {
+        display: none;
+    }
+}
+/* end header */
+/* start landing */
+.landing {
+    display: flex;
+    height: calc(100vh - 80.69px);
+    background-color: rgb(250, 248, 248);
+}
+
+
+@media (min-width:768px) {
+    .landing > div {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width:767px) {
+    .landing {
+        flex-direction: column;
+    }
+    .landing > div {
+        flex-basis: 90%;
+    }
+
+    .landing .image {
+        order: -1;
+        background-image: url("../img/images_template7/bg-intro-mobile.svg") !important;
+    }
+
+    .landing .text {
+        text-align: center;
+        padding: 20px !important;
+
+    }
+
+    .landing .image img {
+        left: 0 !important;
+        max-width: 100%;
+    }
+
+    .landing .text h1 {
+        font-size: 25px !important;
+    }
+    
+    .landing .text p {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+
+}
+
+.landing .image {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../img/images_template7/bg-intro-desktop.svg");
+    background-size: /*800px*/ cover;
+    width: 100%;
+}
+
+.landing .image img {
+    position: absolute;
+    top: -120px;
+    left: 100px;
+}
+
+.landing .text {
+    padding: 100px  60px  160px 110px;
+    color: var(--mainColor);
+}
+
+.landing .text button {
+    margin-top: 20px;
+}
+
+.landing .text h1 {
+    font-weight: 700;
+    font-size: 50px;
+    color: rgb(13, 9, 58);
+}
+
+.landing .text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+@media (max-width:991px) {
+    .landing .text h1 {
+        font-weight: 700;
+        font-size: 40px;
+    }
+    
+    .landing .text p {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+}
+/* end landing */
+/* start leverge open bank  */
+.leverage {
+    padding: var(--mainPadding) 0;
+    background-color: rgb(245, 241, 241);
+}
+
+.leverage .leverage-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 30px;
+}
+
+.leverage .leverage-content .box img {
+    margin-bottom: 40px;
+}
+
+.leverage .leverage-content .box h3 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.leverage .leverage-content .box p {
+    color: var(--mainColor);
+    line-height: 1.4;
+    font-size: 17px;
+}
+
+@media (max-width:767px) {
+    .leverage .leverage-content {
+        text-align: center;
+    }
+}
+/* End leverge open bank  */
+/* start articles section */
+.articles-section {
+    padding: var(--mainPadding) 0;
+    background-color: rgb(250, 248, 248);
+}
+
+.articles-section .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 30px;
+}
+
+.articles-section .articles .article {
+    border-radius: 10px;
+    background-color: white;
+    transition-duration: .3s;
+}
+
+.articles-section .articles .article img {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+    transition-duration: .3s;
+}
+
+.articles-section .articles .article img:hover {
+    transform: scale(1.1);
+}
+
+.articles-section .articles .article:hover {
+    transform: scale(1.1);
+}
+
+.articles-section .articles .article .text {
+    padding: 20px;
+}
+
+.articles-section .articles .article .text h6 {
+    color: var(--mainColor);
+}
+
+.articles-section .articles .article .text h4 {
+    margin: 15px 0;
+}
+
+.articles-section .articles .article .text h4:hover {
+    color:hsl(136, 65%, 51%) ;
+}
+
+.articles-section .articles .article .text p {
+    color: var(--mainColor);
+    font-size: 15px;
+}
+
+/* end articles section */
+/* start footer */
+footer {
+    padding: var(--mainPadding) 0;
+    background-color: rgba(4, 4, 31, 0.932);
+}
+
+footer .container {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+}
+
+footer .container .social-media .icons {
+    display: block;
+    margin-top: 50px;
+}
+
+footer .container .social-media .icons i {
+    margin-right: 10px;
+    transition-duration: .3s;
+}
+
+footer .container .social-media .icons i:hover {
+    color: hsl(136, 65%, 51%);
+}
+
+footer .container .links li {
+    margin-bottom: 20px;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+footer .container .links li:hover {
+    color: hsl(136, 65%, 51%);
+}
+
+footer .container .button p {
+    margin-top: 40px;
+    color: var(--mainColor);
+}
+
+@media (max-width:767px) {
+    footer .container {
+        text-align: center;
+    }
+
+    footer .container .links:first-of-type {
+        margin-top: 15px;
+    }
+}
+/* End footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
