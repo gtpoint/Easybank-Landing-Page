@@ -1,5 +1,5 @@
 #Demo :
-==> https://gtpoint.github.io/Easybank-Landing-Page/
++ ==> https://gtpoint.github.io/Easybank-Landing-Page/
 
 # Front-end Style Guide
 
