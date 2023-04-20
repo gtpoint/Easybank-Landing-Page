@@ -23,7 +23,7 @@ The designs were created to the following widths:
 - Grayish Blue: `#9698a6`
 - Light Grayish Blue: `#f3f4f6`
 - Very Light Gray: `#fafafa`
-- White: `#ffffff`
+- White:  `#ffffff`
 
 ## Typography
 
